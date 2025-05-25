@@ -1,0 +1,24 @@
+---
+title: "Exercise Sheet 3"
+author: "Lea Kunze"
+date: "2025-05-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### **d) Name 2 strengths and 2 weaknesses of Git.**
+
+**Strengths:**
+
+1.  **Version Control:** Git allows you to track changes over time, revert to previous versions, and work on different branches without affecting the main code.
+
+2.  **Collaboration:** Multiple people can work on the same project simultaneously, and Git provides powerful tools to merge changes and resolve conflicts.
+
+**Weaknesses:**
+
+1.  **Steep Learning Curve:** Beginners can find Git difficult to learn, especially when dealing with merge conflicts or using advanced commands.
+
+2.  **Complex History:** For larger projects, the commit history can become messy and hard to understand if not managed properly.
