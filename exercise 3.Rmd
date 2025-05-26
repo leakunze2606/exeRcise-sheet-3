@@ -91,3 +91,29 @@ public_response$cinema_score <- factor(public_response$cinema_score, levels = le
 # merge 
 combined_data <- merge(public_response, pixar, by = "film")
 ```
+
+### d)
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+# numeric
+combined_data$release_date <- as.Date(combined_data$release_date)  # oder numeric Jahr
+
+# sort 
+combined_data <- combined_data %>%
+  arrange(release_date) %>%
+  mutate(film = factor(film, levels = unique(film)))
+
+# Plot
+ggplot(combined_data, aes(x = film, y = metacritic, fill = film)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Metacritic Scores der Filme (nach Release-Datum sortiert)",
+       x = "Film",
+       y = "Metacritic Score") +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1), legend.position = "none")
+```
+
+I noticed that the *Cars* movies were rated increasingly worse over time. Generally, the later installments in a film series tend to receive lower ratings. According to the data, *Ratatouille* was the best received by the public.
