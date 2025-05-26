@@ -79,3 +79,15 @@ series_summary <- movies %>%
 print(series_summary)
 
 ```
+
+### c)
+
+```{r}
+# load data
+public_response <- read.csv("public_response.csv")
+
+levels_order <- sort(unique(public_response$cinema_score))
+public_response$cinema_score <- factor(public_response$cinema_score, levels = levels_order, ordered = TRUE)
+# merge 
+combined_data <- merge(public_response, pixar, by = "film")
+```
