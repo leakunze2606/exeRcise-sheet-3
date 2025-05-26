@@ -44,3 +44,38 @@ The variable `film_rating` contains values based on the Motion Picture Associati
 By inspecting the dataset, we can see that the possible values for `film_rating` are labels such as `"G"`, `"PG"`, `"PG-13"`, or `"NR"`. These represent different rating categories from the MPA system, but the dataset itself does not define the exact meanings. It only tells us that the ratings follow the MPA standard.
 
 Creating a **factor variable** for `film_rating` is appropriate because the ratings represent a fixed set of **categorical values**. Factors are useful for modeling and plotting categorical data and help ensure that R treats the values as discrete levels instead of free-form text.
+
+### b)
+
+```{r}
+library(dplyr)
+library(stringr)
+# Manually film titles
+movies <- data.frame(
+  reihe = c(
+    "A Bug's Life", "Brave", "Cars", "Cars 2", "Cars 3", "Coco", "Finding Dory", "Finding Nemo", "Incredibles 2", "Inside Out", "Lightyear", "Luca", "Monsters University", "Monsters, Inc.", "Onward", "Ratatouille", "The Good Dinosaur", "The Incredibles", "Toy Story", "Toy Story 2", "Toy Story 3", "Toy Story 4", "Turning Red", "Up", "WALL-E" 
+    ),
+  stringsAsFactors = FALSE
+)
+
+movies$series <- c(
+  "Standalone", "Standalone", "Cars", "Cars", "Cars", "Standalone", "Finding Nemo", "Finding Nemo",
+  "The Incredibles", "Standalone", "Standalone", "Standalone", "Monsters, Inc.", "Monsters, Inc.",
+  "Standalone", "Standalone", "Standalone", "The Incredibles", "Toy Story", "Toy Story", 
+  "Toy Story", "Toy Story", "Standalone", "Standalone", "Standalone"
+)
+
+# Groub by series and summarize
+library(dplyr)
+
+series_summary <- movies %>%
+  group_by(series) %>%
+  summarise(
+    titles = paste(reihe, collapse = ", "),
+    count = n()
+  ) %>%
+  ungroup()
+
+print(series_summary)
+
+```
