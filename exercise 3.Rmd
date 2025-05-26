@@ -22,3 +22,25 @@ knitr::opts_chunk$set(echo = TRUE)
 1.  **Steep Learning Curve:** Beginners can find Git difficult to learn, especially when dealing with merge conflicts or using advanced commands.
 
 2.  **Complex History:** For larger projects, the commit history can become messy and hard to understand if not managed properly.
+
+##  Exercise 3: Pixar Films 
+
+### a) 
+
+```{r}
+library(tidyverse)
+
+pixar <- read_csv("pixar_films.csv") %>%
+  filter(!is.na(film))
+
+unique(pixar$film_rating)
+
+pixar <- pixar %>%
+  mutate(film_rating = factor(film_rating))
+```
+
+The variable `film_rating` contains values based on the Motion Picture Association (MPA) film rating system. It describes how films are rated for content suitability.
+
+By inspecting the dataset, we can see that the possible values for `film_rating` are labels such as `"G"`, `"PG"`, `"PG-13"`, or `"NR"`. These represent different rating categories from the MPA system, but the dataset itself does not define the exact meanings. It only tells us that the ratings follow the MPA standard.
+
+Creating a **factor variable** for `film_rating` is appropriate because the ratings represent a fixed set of **categorical values**. Factors are useful for modeling and plotting categorical data and help ensure that R treats the values as discrete levels instead of free-form text.
