@@ -113,7 +113,7 @@ combined_data <- combined_data %>%
 # Plot
 ggplot(combined_data, aes(x = film, y = metacritic, fill = film)) +
   geom_bar(stat = "identity") +
-  labs(title = "Metacritic Scores der Filme (nach Release-Datum sortiert)",
+  labs(title = "Metacritic Scores Movies (sorted by date)",
        x = "Film",
        y = "Metacritic Score") +
   theme_minimal() +
