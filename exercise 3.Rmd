@@ -150,7 +150,7 @@ The **Fatality Rate** is a measure that shows how severe road accidents are by i
 \text{Fatality Rate} = \frac{\text{Number of Road Deaths}}{\text{Number of Accidents Reported to Police}}
 $$
 
-### d) Data Analysis
+### e) Data Analysis
 
 ```{r}
 # clean data with janitor
