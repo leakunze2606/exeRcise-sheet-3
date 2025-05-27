@@ -23,9 +23,13 @@ knitr::opts_chunk$set(echo = TRUE)
 
 2.  **Complex History:** For larger projects, the commit history can become messy and hard to understand if not managed properly.
 
-##  Exercise 3: Pixar Films 
+## Exercise 2: Putting your Repository on GitHub
 
-### a) 
+Here is the link to the repository: [GitHub Repository](https://github.com/leakunze2606/exeRcise-sheet-3)
+
+## Exercise 3: Pixar Films
+
+### a)
 
 ```{r}
 library(tidyverse)
@@ -117,3 +121,7 @@ ggplot(combined_data, aes(x = film, y = metacritic, fill = film)) +
 ```
 
 I noticed that the *Cars* movies were rated increasingly worse over time. Generally, the later installments in a film series tend to receive lower ratings. According to the data, *Ratatouille* was the best received by the public.
+
+## Exercise 4: Open Analysis
+
+### a)
