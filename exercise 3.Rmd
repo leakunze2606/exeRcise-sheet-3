@@ -149,3 +149,34 @@ This question is interesting because it investigates whether, despite an increas
 The **Fatality Rate** is a measure that shows how severe road accidents are by indicating the proportion of accidents that result in deaths. It is calculated as: $$
 \text{Fatality Rate} = \frac{\text{Number of Road Deaths}}{\text{Number of Accidents Reported to Police}}
 $$
+
+### d) Data Analysis
+
+```{r}
+# clean data with janitor
+library(janitor)
+German_road_deaths_and_accidents_destatis <- 
+  clean_names(German_road_deaths_and_accidents_destatis)
+# new variable "Fatality Rate"
+German_road_deaths_and_accidents_destatis$fatality_rate <- 
+  German_road_deaths_and_accidents_destatis$road_deaths / 
+  German_road_deaths_and_accidents_destatis$accidents_reported_to_police
+
+#linear regression
+model <- lm(fatality_rate ~ year, data = German_road_deaths_and_accidents_destatis)
+summary(model)
+
+
+```
+
+**Results:**
+
+-   The intercept ( 𝛽 0 β 0 ​ ) is approximately 0.6671, which represents the estimated fatality rate when the year is zero (this is outside the range of our data, so it mainly serves as a model baseline).
+
+-   The coefficient for year ( 𝛽 1 β 1 ​ ) is approximately -0.0003319. This indicates that the fatality rate decreases by about 0.00033 (or 0.033%) per year on average.
+
+-   The p-value for the year coefficient is \< 2e-16, showing that this decreasing trend is highly statistically significant.
+
+-   The model explains approximately 90.6% of the variance in fatality rate ( 𝑅 2 = 0.906 R 2 =0.906), which indicates an excellent fit.
+
+**Interpretation:** There is a clear and significant downward trend in the fatality rate over time. Each passing year corresponds to a small but consistent reduction in fatality rate, suggesting improvements in road safety or related factors.
