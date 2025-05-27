@@ -139,3 +139,13 @@ German_road_deaths_and_accidents_destatis <- read_csv("German road deaths and ac
 ```
 
 The dataset was downloaded into my project folder and tracked using Git.
+
+### d) Research Question: How did the proportion of fatal road accidents change over time between 1960 and 2016?
+
+**Why is this interesting?**
+
+This question is interesting because it investigates whether, despite an increase in the number of accidents (e.g., due to more traffic), the severity of accidents is increasing or decreasing. For example, if the fatality rate per accident is decreasing, this could indicate improvements such as better road infrastructure, safer vehicles, or enhanced medical care.
+
+The **Fatality Rate** is a measure that shows how severe road accidents are by indicating the proportion of accidents that result in deaths. It is calculated as: $$
+\text{Fatality Rate} = \frac{\text{Number of Road Deaths}}{\text{Number of Accidents Reported to Police}}
+$$
