@@ -1,6 +1,6 @@
 ---
 title: "Exercise Sheet 3"
-author: "Lea Kunze"
+author: "Lea Kunze (12790172)"
 date: "2025-05-25"
 output: html_document
 ---
@@ -180,3 +180,29 @@ summary(model)
 -   The model explains approximately 90.6% of the variance in fatality rate ( 𝑅 2 = 0.906 R 2 =0.906), which indicates an excellent fit.
 
 **Interpretation:** There is a clear and significant downward trend in the fatality rate over time. Each passing year corresponds to a small but consistent reduction in fatality rate, suggesting improvements in road safety or related factors.
+
+### f) Visualization
+
+```{r fatality-rate-plot, fig.cap="Figure 1: Fatality Rate in Germany from 1960 to 2016. Each point represents one year. The red line shows the linear trend."}
+# Filter for years 1960–2016
+data_filtered <- subset(German_road_deaths_and_accidents_destatis, year >= 1960 & year <= 2016)
+
+# Plot each year's fatality rate
+plot(data_filtered$year, data_filtered$fatality_rate,
+     type = "p",          
+     col = "blue",
+     pch = 19,           
+     xlab = "Year",
+     ylab = "Fatality Rate",
+     main = "Fatality Rate in Germany, Road (1960–2016)",
+     xaxt = "n",
+     ylim = c(min(data_filtered$fatality_rate), max(data_filtered$fatality_rate))
+)
+
+# Add every year label on x-axis
+axis(1, at = data_filtered$year, las = 2, cex.axis = 0.7)
+
+# Add linear regression line
+model <- lm(fatality_rate ~ year, data = data_filtered)
+abline(model, col = "red", lwd = 2)
+```
