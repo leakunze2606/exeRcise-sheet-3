@@ -124,4 +124,9 @@ I noticed that the *Cars* movies were rated increasingly worse over time. Genera
 
 ## Exercise 4: Open Analysis
 
-### a)
+### a) For this analysis, I selected the following dataset:
+
+-   **Title:** *German road deaths and accidents*\
+-   **Source:** [Link to dataset](https://github.com/owid/owid-datasets/tree/master/datasets/German%20road%20deaths%20and%20accidents%20-%20destatis)
+
+The dataset contains information about traffic accidents and road deaths in Germany over several years.
