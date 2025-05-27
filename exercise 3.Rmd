@@ -130,3 +130,12 @@ I noticed that the *Cars* movies were rated increasingly worse over time. Genera
 -   **Source:** [Link to dataset](https://github.com/owid/owid-datasets/tree/master/datasets/German%20road%20deaths%20and%20accidents%20-%20destatis)
 
 The dataset contains information about traffic accidents and road deaths in Germany over several years.
+
+### b) / c) Data Import and Git Tracking
+
+```{r}
+library(readr)
+German_road_deaths_and_accidents_destatis <- read_csv("German road deaths and accidents - destatis.csv")
+```
+
+The dataset was downloaded into my project folder and tracked using Git.
